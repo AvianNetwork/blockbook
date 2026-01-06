@@ -109,23 +109,16 @@
                 <tr>
                     <td>Last Block</td>
                     <td>{{formatInt $be.Blocks}}</td>
-                </tr>
-                <tr>
-                    <td>Difficulty</td>
-                    <td>{{$be.Difficulty}}</td>
-                </tr>
-                {{if $be.DifficultyMinotaurx}}
-                <tr>
+                </tr>{{if or $be.DifficultyMinotaurx $be.DifficultyX16rt}}{{if $be.DifficultyMinotaurx}}<tr>
                     <td>Difficulty (MinotaurX)</td>
                     <td>{{$be.DifficultyMinotaurx}}</td>
-                </tr>
-                {{end}}
-                {{if $be.DifficultyX16rt}}
-                <tr>
+                </tr>{{end}}{{if $be.DifficultyX16rt}}<tr>
                     <td>Difficulty (X16RT)</td>
                     <td>{{$be.DifficultyX16rt}}</td>
-                </tr>
-                {{end}}
+                </tr>{{end}}{{else}}<tr>
+                    <td>Difficulty</td>
+                    <td>{{$be.Difficulty}}</td>
+                </tr>{{end}}
                 {{if $be.Timeoffset}}
                 <tr>
                     <td>Timeoffset</td>

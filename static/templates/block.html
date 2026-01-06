@@ -60,23 +60,8 @@
                     <td class="ellipsis">{{$b.PowType}}</td>
                 </tr>{{end}}<tr>
                     <td>Difficulty</td>
-                    <td class="ellipsis">{{$b.Difficulty}}</td>
+                    <td class="ellipsis">{{if and $b.PowType (eq $b.PowType "minotaurx") $b.DifficultyMinotaurx}}{{$b.DifficultyMinotaurx}}{{else if and $b.PowType (eq $b.PowType "x16rt") $b.DifficultyX16rt}}{{$b.DifficultyX16rt}}{{else if and $b.PowType (eq $b.PowType "x16r") $b.DifficultyX16r}}{{$b.DifficultyX16r}}{{else}}{{$b.Difficulty}}{{end}}</td>
                 </tr>
-                {{if $b.DifficultyMinotaurx}}<tr>
-                    <td>Difficulty (MinotaurX)</td>
-                    <td class="ellipsis">{{$b.DifficultyMinotaurx}}</td>
-                </tr>
-                {{end}}
-                {{if $b.DifficultyX16rt}}<tr>
-                    <td>Difficulty (X16RT)</td>
-                    <td class="ellipsis">{{$b.DifficultyX16rt}}</td>
-                </tr>
-                {{end}}
-                {{if $b.DifficultyX16r}}<tr>
-                    <td>Difficulty (X16R)</td>
-                    <td class="ellipsis">{{$b.DifficultyX16r}}</td>
-                </tr>
-                {{end}}
             </tbody>
         </table>
     </div>
