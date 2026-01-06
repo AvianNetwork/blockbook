@@ -1,0 +1,4 @@
+# Blockbook templates contain Go template directives and are sensitive to formatting.
+# Avoid automatic reflow that can change rendered/minified output and break tests.
+static/templates/**/*.html
+static/internal_templates/**/*.html

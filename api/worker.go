@@ -2502,6 +2502,8 @@ func (w *Worker) GetSystemInfo(internal bool) (*SystemInfo, error) {
 		Blocks:           ci.Blocks,
 		Chain:            ci.Chain,
 		Difficulty:       ci.Difficulty,
+		DifficultyMinotaurx: ci.DifficultyMinotaurx,
+		DifficultyX16rt:     ci.DifficultyX16rt,
 		Headers:          ci.Headers,
 		ProtocolVersion:  ci.ProtocolVersion,
 		SizeOnDisk:       ci.SizeOnDisk,
@@ -2549,6 +2551,10 @@ type bitcoinTypeEstimatedFee struct {
 const estimatedFeeCacheSize = 300
 
 var estimatedFeeCache [estimatedFeeCacheSize]bitcoinTypeEstimatedFee
+			PowType:             bi.PowType,
+			DifficultyMinotaurx: string(bi.DifficultyMinotaurx),
+			DifficultyX16rt:     string(bi.DifficultyX16rt),
+			DifficultyX16r:      string(bi.DifficultyX16r),
 var estimatedFeeConservativeCache [estimatedFeeCacheSize]bitcoinTypeEstimatedFee
 
 func (w *Worker) cachedEstimateFee(blocks int, conservative bool) (big.Int, error) {

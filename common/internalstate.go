@@ -40,6 +40,8 @@ type BackendInfo struct {
 	Headers          int         `json:"headers,omitempty" ts_doc:"Number of block headers in the chain."`
 	BestBlockHash    string      `json:"bestBlockHash,omitempty" ts_doc:"Hash of the best block in hex."`
 	Difficulty       string      `json:"difficulty,omitempty" ts_doc:"Current difficulty of the network."`
+	DifficultyMinotaurx string   `json:"difficultyMinotaurx,omitempty" ts_doc:"Current MinotaurX difficulty of the network (dual-algo chains only)."`
+	DifficultyX16rt     string   `json:"difficultyX16rt,omitempty" ts_doc:"Current X16RT difficulty of the network (dual-algo chains only)."`
 	SizeOnDisk       int64       `json:"sizeOnDisk,omitempty" ts_doc:"Size of the blockchain data on disk in bytes."`
 	Version          string      `json:"version,omitempty" ts_doc:"Version of the blockchain backend - e.g. '280000'."`
 	Subversion       string      `json:"subversion,omitempty" ts_doc:"Subversion of the blockchain backend - e.g. '/Satoshi:28.0.0/'."`

@@ -173,6 +173,10 @@ type BlockInfo struct {
 	Nonce      common.JSONNumber `json:"nonce" ts_doc:"Nonce used in the mining process."`
 	Bits       string            `json:"bits" ts_doc:"Compact representation of the target threshold."`
 	Difficulty common.JSONNumber `json:"difficulty" ts_doc:"Difficulty target for mining this block."`
+	PowType             string            `json:"powtype,omitempty" ts_doc:"PoW algorithm/type used to mine this block (chain-specific)."`
+	DifficultyMinotaurx common.JSONNumber `json:"difficulty_minotaurx,omitempty" ts_doc:"MinotaurX difficulty for this block (dual-algo chains only)."`
+	DifficultyX16rt     common.JSONNumber `json:"difficulty_x16rt,omitempty" ts_doc:"X16RT difficulty for this block (dual-algo chains only)."`
+	DifficultyX16r      common.JSONNumber `json:"difficulty_x16r,omitempty" ts_doc:"X16R difficulty for this block (dual-algo chains only)."`
 	Txids      []string          `json:"tx,omitempty" ts_doc:"List of transaction IDs included in this block."`
 }
 
@@ -201,6 +205,8 @@ type ChainInfo struct {
 	Headers          int         `json:"headers" ts_doc:"Number of block headers in the chain (can be ahead of full blocks)."`
 	Bestblockhash    string      `json:"bestblockhash" ts_doc:"Hash of the best (latest) block."`
 	Difficulty       string      `json:"difficulty" ts_doc:"Current difficulty of the network."`
+	DifficultyMinotaurx string   `json:"difficulty_minotaurx,omitempty" ts_doc:"Current MinotaurX difficulty of the network (dual-algo chains only)."`
+	DifficultyX16rt     string   `json:"difficulty_x16rt,omitempty" ts_doc:"Current X16RT difficulty of the network (dual-algo chains only)."`
 	SizeOnDisk       int64       `json:"size_on_disk" ts_doc:"Size of the blockchain data on disk in bytes."`
 	Version          string      `json:"version" ts_doc:"Version of the blockchain backend."`
 	Subversion       string      `json:"subversion" ts_doc:"Subversion string of the blockchain backend."`

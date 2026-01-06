@@ -271,6 +271,8 @@ type ResGetBlockChainInfo struct {
 		Headers       int               `json:"headers"`
 		Bestblockhash string            `json:"bestblockhash"`
 		Difficulty    common.JSONNumber `json:"difficulty"`
+		DifficultyMinotaurx common.JSONNumber `json:"difficulty_minotaurx,omitempty"`
+		DifficultyX16rt     common.JSONNumber `json:"difficulty_x16rt,omitempty"`
 		SizeOnDisk    int64             `json:"size_on_disk"`
 		Warnings      string            `json:"warnings"`
 	} `json:"result"`
@@ -493,6 +495,8 @@ func (b *BitcoinRPC) GetChainInfo() (*bchain.ChainInfo, error) {
 		Blocks:        resCi.Result.Blocks,
 		Chain:         resCi.Result.Chain,
 		Difficulty:    string(resCi.Result.Difficulty),
+		DifficultyMinotaurx: string(resCi.Result.DifficultyMinotaurx),
+		DifficultyX16rt:     string(resCi.Result.DifficultyX16rt),
 		Headers:       resCi.Result.Headers,
 		SizeOnDisk:    resCi.Result.SizeOnDisk,
 		Subversion:    string(resNi.Result.Subversion),

@@ -514,6 +514,10 @@ type BlockInfo struct {
 	Nonce         string            `json:"nonce" ts_doc:"Nonce used in the mining process."`
 	Bits          string            `json:"bits" ts_doc:"Compact representation of the target threshold."`
 	Difficulty    string            `json:"difficulty" ts_doc:"Difficulty target for mining this block."`
+	PowType             string `json:"powType,omitempty" ts_doc:"PoW algorithm/type used to mine this block (chain-specific)."`
+	DifficultyMinotaurx string `json:"difficultyMinotaurx,omitempty" ts_doc:"MinotaurX difficulty for this block (dual-algo chains only)."`
+	DifficultyX16rt     string `json:"difficultyX16rt,omitempty" ts_doc:"X16RT difficulty for this block (dual-algo chains only)."`
+	DifficultyX16r      string `json:"difficultyX16r,omitempty" ts_doc:"X16R difficulty for this block (dual-algo chains only)."`
 	Txids         []string          `json:"tx,omitempty" ts_doc:"List of transaction IDs included in this block."`
 }
 
