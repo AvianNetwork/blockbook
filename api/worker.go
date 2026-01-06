@@ -2291,7 +2291,11 @@ func (w *Worker) GetBlock(bid string, page int, txsOnPage int) (*Block, error) {
 			Size:          bi.Size,
 			Time:          bi.Time,
 			Bits:          bi.Bits,
+			PowType:       bi.PowType,
 			Difficulty:    string(bi.Difficulty),
+			DifficultyMinotaurx: string(bi.DifficultyMinotaurx),
+			DifficultyX16rt:     string(bi.DifficultyX16rt),
+			DifficultyX16r:      string(bi.DifficultyX16r),
 			MerkleRoot:    bi.MerkleRoot,
 			Nonce:         string(bi.Nonce),
 			Txids:         bi.Txids,
@@ -2551,10 +2555,6 @@ type bitcoinTypeEstimatedFee struct {
 const estimatedFeeCacheSize = 300
 
 var estimatedFeeCache [estimatedFeeCacheSize]bitcoinTypeEstimatedFee
-			PowType:             bi.PowType,
-			DifficultyMinotaurx: string(bi.DifficultyMinotaurx),
-			DifficultyX16rt:     string(bi.DifficultyX16rt),
-			DifficultyX16r:      string(bi.DifficultyX16r),
 var estimatedFeeConservativeCache [estimatedFeeCacheSize]bitcoinTypeEstimatedFee
 
 func (w *Worker) cachedEstimateFee(blocks int, conservative bool) (big.Int, error) {
