@@ -1,11 +1,5 @@
 {{define "specific"}}{{$cs := .CoinShortcut}}{{$bb := .Info.Blockbook}}{{$be := .Info.Backend}}
-<h1>Application status</h1>
-{{if $bb.InitialSync}}
-<h3><span class="badge bg-danger text-white p-3 w-100" style="white-space: break-spaces;">Application is now in initial synchronization and does not provide any data.</span></h3>
-{{end}}
-{{if not $bb.SyncMode}}
-<h3><span class="badge bg-warning text-white p-3 w-100" style="white-space: break-spaces;">Synchronization with backend is disabled, the state of index is not up to date.</span></h3>
-{{end}}
+<h1>Application status</h1>{{if $bb.InitialSync}}<h3><span class="badge bg-danger text-white p-3 w-100" style="white-space: break-spaces;">Application is now in initial synchronization and does not provide any data.</span></h3>{{end}}{{if not $bb.SyncMode}}<h3><span class="badge bg-warning text-white p-3 w-100" style="white-space: break-spaces;">Synchronization with backend is disabled, the state of index is not up to date.</span></h3>{{end}}
 <div class="row">
     <div class="col-lg-6">
         <table class="table data-table info-table">
@@ -160,7 +154,5 @@
         </table>
     </div>
 </div>
-<span class="text-muted">{{$bb.About}}
-{{if .SecondaryCoin}}<br>Exchange rates provided by Coingecko.{{end}}
-</span>
+<span class="text-muted">{{$bb.About}}{{if .SecondaryCoin}}<br>Exchange rates provided by Coingecko.{{end}}</span>
 {{end}}
